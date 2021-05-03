@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  
+        <siteMapNode url ="Default.aspx" title="Main Page" description="Main Page">
+        <siteMapNode url="users/ShowCustomers.aspx" title="Customers Page"  description="Customers Page" />
+        <siteMapNode url="users/ShowOrders.aspx" title="Orders Page"  description="Orders Page" />
+            
+        <siteMapNode url="users/ShowWorkers.aspx" title="Workers Page"  description="Workers Page" />
+        <siteMapNode url="" title="All Products"  description="All Products" >
+        <siteMapNode url="users/ShowProducts.aspx?source=concrete" title="Concrete Products Page"  description="Concrete Products Page" />
+        <siteMapNode url="users/ShowProducts.aspx?source=wood" title="Wood Products Page"  description="Wood Products Page" />
+        <siteMapNode url="users/ShowProducts.aspx?source=base" title="Base Products Page"  description="Base Products Page" />
+        <siteMapNode url="users/ShowProducts.aspx?source=screw" title="Screw Products Page"  description="Screw Products Page" />
+        </siteMapNode>
+        <siteMapNode url="users/RegisterPage.aspx" title="Register"  description="Register Page" />
+        <siteMapNode url="users/aboutUs.aspx" title="About Us"  description="Click here bitch"/>
+
+        </siteMapNode>
+
+</siteMap>

@@ -1,0 +1,61 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" dir="rtl">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body backGround="/asp/pic/פרגולת-עץ.jpg" >
+    <form id="form1" runat="server">
+    <div>
+    <table align="center">
+        <tr>
+            <td>
+                <font color="#006633" size="1">
+                <asp:HyperLink ID="HyperLink1" runat="server" 
+                NavigateUrl="admin/adminLogin.aspx?what=logon" >התחבר כאדמין</asp:HyperLink>&nbsp
+                <asp:HyperLink ID="HyperLink4" runat="server" 
+                NavigateUrl="admin/adminLogin.aspx?what=logoff">התנתק</asp:HyperLink>
+                </font> &nbsp&nbsp    
+                <asp:Label ID="Label1" runat="server" Text="מצב אדמין " 
+                visible ="False" BackColor="Red" Width="300px" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+             <br />
+                    <asp:Menu ID="MainMenu1" runat="server" MaximumDynamicDisplayLevels="2"
+                DataSourceID="SiteMapDataSource" Font-Size="1.6em" ItemWrap="True" 
+                BackColor="#FFFBD6" DynamicHorizontalOffset="2" Font-Names="Verdana" 
+                ForeColor="#990000" StaticSubMenuIndent="13px" BorderWidth="2" BorderColor="#990000" Font-Italic="true"
+                
+                  Orientation="Horizontal" 
+          StaticItemFormatString=" {0} " 
+          StaticPopOutImageUrl="designGifs/icon_left_white_arrow.gif" 
+          StaticDisplayLevels="2" Width="100%" >
+                        <DynamicHoverStyle BackColor="#990000" ForeColor="White" />
+                        <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                        <DynamicMenuStyle BackColor="#FFFBD6" />
+                        <DynamicSelectedStyle BackColor="#FFCC66" />
+                        <StaticHoverStyle BackColor="#990000" ForeColor="White" />
+                        <StaticMenuItemStyle HorizontalPadding="10px" VerticalPadding="4px" />
+                        <StaticSelectedStyle BackColor="#FFCC66" />
+            </asp:Menu>  
+                            <asp:SiteMapDataSource ID="siteMapDataSource" runat="server" />
+            </td>
+        </tr>
+
+        <tr>    
+            <td>        <asp:contentplaceholder id="ContentPlaceHolder1" runat="server" >
+        </asp:contentplaceholder>
+
+            </td>
+        </tr>
+    </table>
+    </div>
+    </form>
+</body>
+</html>

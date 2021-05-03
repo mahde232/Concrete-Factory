@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  
+    <siteMapNode url="Default.aspx" title="דף ראשי"  description="">
+      
+      <siteMapNode url="users/aboutUs.aspx" title="מידע עלינו"  description="" />
+      
+      <siteMapNode url="users/connect.aspx" title="צור קשר"  description="" />
+ 
+       <siteMapNode url="users/items.aspx" title="מוצרים"  description="" >
+                     <siteMapNode url="users/wood.aspx" title="עץ"  description="" />
+                     <siteMapNode url="users/base.aspx" title="תושבות"  description="" />
+                     <siteMapNode url="users/screws.aspx" title="ברגים"  description="" />
+        </siteMapNode>
+
+      <siteMapNode url="users/LoginOptions.aspx" title="היכנס לחשבון" description=""/>
+    </siteMapNode>
+</siteMap>

@@ -1,0 +1,838 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllItemsNames">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllItemsNamesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllItemsNamesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetItemsByTypeAndName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetItemsByTypeAndNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetItemsByTypeAndNameResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllItems">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllItemsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllItemsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get1Item">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get1ItemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Get1ItemResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWoodOnly">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetWoodOnlyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetWoodOnlyResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWoodTypes">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetWoodTypesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetWoodTypesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWoodNames">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetWoodNamesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetWoodNamesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetScrewOnly">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetScrewOnlyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetScrewOnlyResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetScrewTypes">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetScrewTypesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetScrewTypesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetScrewsByType">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetScrewsByTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetScrewsByTypeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBaseOnly">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetBaseOnlyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBaseOnlyResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBaseTypes">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetBaseTypesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBaseTypesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBaseByType">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBaseByTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBaseByTypeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConvertItemId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="convert" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConvertItemIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConvertItemIdResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetItemCost">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetItemCostResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetItemCostResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetItemNameX">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetItemNameXResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetItemNameXResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetItemNameX2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetItemNameX2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetItemNameX2Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllItemsNamesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllItemsNames" />
+  </wsdl:message>
+  <wsdl:message name="GetAllItemsNamesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllItemsNamesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetItemsByTypeAndNameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetItemsByTypeAndName" />
+  </wsdl:message>
+  <wsdl:message name="GetItemsByTypeAndNameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetItemsByTypeAndNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllItemsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllItems" />
+  </wsdl:message>
+  <wsdl:message name="GetAllItemsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllItemsResponse" />
+  </wsdl:message>
+  <wsdl:message name="Get1ItemSoapIn">
+    <wsdl:part name="parameters" element="tns:Get1Item" />
+  </wsdl:message>
+  <wsdl:message name="Get1ItemSoapOut">
+    <wsdl:part name="parameters" element="tns:Get1ItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetWoodOnlySoapIn">
+    <wsdl:part name="parameters" element="tns:GetWoodOnly" />
+  </wsdl:message>
+  <wsdl:message name="GetWoodOnlySoapOut">
+    <wsdl:part name="parameters" element="tns:GetWoodOnlyResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetWoodTypesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetWoodTypes" />
+  </wsdl:message>
+  <wsdl:message name="GetWoodTypesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetWoodTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetWoodNamesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetWoodNames" />
+  </wsdl:message>
+  <wsdl:message name="GetWoodNamesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetWoodNamesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetScrewOnlySoapIn">
+    <wsdl:part name="parameters" element="tns:GetScrewOnly" />
+  </wsdl:message>
+  <wsdl:message name="GetScrewOnlySoapOut">
+    <wsdl:part name="parameters" element="tns:GetScrewOnlyResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetScrewTypesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetScrewTypes" />
+  </wsdl:message>
+  <wsdl:message name="GetScrewTypesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetScrewTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetScrewsByTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetScrewsByType" />
+  </wsdl:message>
+  <wsdl:message name="GetScrewsByTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetScrewsByTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBaseOnlySoapIn">
+    <wsdl:part name="parameters" element="tns:GetBaseOnly" />
+  </wsdl:message>
+  <wsdl:message name="GetBaseOnlySoapOut">
+    <wsdl:part name="parameters" element="tns:GetBaseOnlyResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBaseTypesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBaseTypes" />
+  </wsdl:message>
+  <wsdl:message name="GetBaseTypesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBaseTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBaseByTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBaseByType" />
+  </wsdl:message>
+  <wsdl:message name="GetBaseByTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBaseByTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConvertItemIdSoapIn">
+    <wsdl:part name="parameters" element="tns:ConvertItemId" />
+  </wsdl:message>
+  <wsdl:message name="ConvertItemIdSoapOut">
+    <wsdl:part name="parameters" element="tns:ConvertItemIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetItemCostSoapIn">
+    <wsdl:part name="parameters" element="tns:GetItemCost" />
+  </wsdl:message>
+  <wsdl:message name="GetItemCostSoapOut">
+    <wsdl:part name="parameters" element="tns:GetItemCostResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetItemNameXSoapIn">
+    <wsdl:part name="parameters" element="tns:GetItemNameX" />
+  </wsdl:message>
+  <wsdl:message name="GetItemNameXSoapOut">
+    <wsdl:part name="parameters" element="tns:GetItemNameXResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetItemNameX2SoapIn">
+    <wsdl:part name="parameters" element="tns:GetItemNameX2" />
+  </wsdl:message>
+  <wsdl:message name="GetItemNameX2SoapOut">
+    <wsdl:part name="parameters" element="tns:GetItemNameX2Response" />
+  </wsdl:message>
+  <wsdl:portType name="WebServiceSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllItemsNames">
+      <wsdl:input message="tns:GetAllItemsNamesSoapIn" />
+      <wsdl:output message="tns:GetAllItemsNamesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetItemsByTypeAndName">
+      <wsdl:input message="tns:GetItemsByTypeAndNameSoapIn" />
+      <wsdl:output message="tns:GetItemsByTypeAndNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllItems">
+      <wsdl:input message="tns:GetAllItemsSoapIn" />
+      <wsdl:output message="tns:GetAllItemsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get1Item">
+      <wsdl:input message="tns:Get1ItemSoapIn" />
+      <wsdl:output message="tns:Get1ItemSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWoodOnly">
+      <wsdl:input message="tns:GetWoodOnlySoapIn" />
+      <wsdl:output message="tns:GetWoodOnlySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWoodTypes">
+      <wsdl:input message="tns:GetWoodTypesSoapIn" />
+      <wsdl:output message="tns:GetWoodTypesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWoodNames">
+      <wsdl:input message="tns:GetWoodNamesSoapIn" />
+      <wsdl:output message="tns:GetWoodNamesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetScrewOnly">
+      <wsdl:input message="tns:GetScrewOnlySoapIn" />
+      <wsdl:output message="tns:GetScrewOnlySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetScrewTypes">
+      <wsdl:input message="tns:GetScrewTypesSoapIn" />
+      <wsdl:output message="tns:GetScrewTypesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetScrewsByType">
+      <wsdl:input message="tns:GetScrewsByTypeSoapIn" />
+      <wsdl:output message="tns:GetScrewsByTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBaseOnly">
+      <wsdl:input message="tns:GetBaseOnlySoapIn" />
+      <wsdl:output message="tns:GetBaseOnlySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBaseTypes">
+      <wsdl:input message="tns:GetBaseTypesSoapIn" />
+      <wsdl:output message="tns:GetBaseTypesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBaseByType">
+      <wsdl:input message="tns:GetBaseByTypeSoapIn" />
+      <wsdl:output message="tns:GetBaseByTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConvertItemId">
+      <wsdl:input message="tns:ConvertItemIdSoapIn" />
+      <wsdl:output message="tns:ConvertItemIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetItemCost">
+      <wsdl:input message="tns:GetItemCostSoapIn" />
+      <wsdl:output message="tns:GetItemCostSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetItemNameX">
+      <wsdl:input message="tns:GetItemNameXSoapIn" />
+      <wsdl:output message="tns:GetItemNameXSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetItemNameX2">
+      <wsdl:input message="tns:GetItemNameX2SoapIn" />
+      <wsdl:output message="tns:GetItemNameX2SoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebServiceSoap" type="tns:WebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllItemsNames">
+      <soap:operation soapAction="http://tempuri.org/GetAllItemsNames" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetItemsByTypeAndName">
+      <soap:operation soapAction="http://tempuri.org/GetItemsByTypeAndName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllItems">
+      <soap:operation soapAction="http://tempuri.org/GetAllItems" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get1Item">
+      <soap:operation soapAction="http://tempuri.org/Get1Item" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWoodOnly">
+      <soap:operation soapAction="http://tempuri.org/GetWoodOnly" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWoodTypes">
+      <soap:operation soapAction="http://tempuri.org/GetWoodTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWoodNames">
+      <soap:operation soapAction="http://tempuri.org/GetWoodNames" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetScrewOnly">
+      <soap:operation soapAction="http://tempuri.org/GetScrewOnly" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetScrewTypes">
+      <soap:operation soapAction="http://tempuri.org/GetScrewTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetScrewsByType">
+      <soap:operation soapAction="http://tempuri.org/GetScrewsByType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBaseOnly">
+      <soap:operation soapAction="http://tempuri.org/GetBaseOnly" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBaseTypes">
+      <soap:operation soapAction="http://tempuri.org/GetBaseTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBaseByType">
+      <soap:operation soapAction="http://tempuri.org/GetBaseByType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConvertItemId">
+      <soap:operation soapAction="http://tempuri.org/ConvertItemId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetItemCost">
+      <soap:operation soapAction="http://tempuri.org/GetItemCost" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetItemNameX">
+      <soap:operation soapAction="http://tempuri.org/GetItemNameX" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetItemNameX2">
+      <soap:operation soapAction="http://tempuri.org/GetItemNameX2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceSoap12" type="tns:WebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllItemsNames">
+      <soap12:operation soapAction="http://tempuri.org/GetAllItemsNames" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetItemsByTypeAndName">
+      <soap12:operation soapAction="http://tempuri.org/GetItemsByTypeAndName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllItems">
+      <soap12:operation soapAction="http://tempuri.org/GetAllItems" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get1Item">
+      <soap12:operation soapAction="http://tempuri.org/Get1Item" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWoodOnly">
+      <soap12:operation soapAction="http://tempuri.org/GetWoodOnly" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWoodTypes">
+      <soap12:operation soapAction="http://tempuri.org/GetWoodTypes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWoodNames">
+      <soap12:operation soapAction="http://tempuri.org/GetWoodNames" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetScrewOnly">
+      <soap12:operation soapAction="http://tempuri.org/GetScrewOnly" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetScrewTypes">
+      <soap12:operation soapAction="http://tempuri.org/GetScrewTypes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetScrewsByType">
+      <soap12:operation soapAction="http://tempuri.org/GetScrewsByType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBaseOnly">
+      <soap12:operation soapAction="http://tempuri.org/GetBaseOnly" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBaseTypes">
+      <soap12:operation soapAction="http://tempuri.org/GetBaseTypes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBaseByType">
+      <soap12:operation soapAction="http://tempuri.org/GetBaseByType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConvertItemId">
+      <soap12:operation soapAction="http://tempuri.org/ConvertItemId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetItemCost">
+      <soap12:operation soapAction="http://tempuri.org/GetItemCost" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetItemNameX">
+      <soap12:operation soapAction="http://tempuri.org/GetItemNameX" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetItemNameX2">
+      <soap12:operation soapAction="http://tempuri.org/GetItemNameX2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebService">
+    <wsdl:port name="WebServiceSoap" binding="tns:WebServiceSoap">
+      <soap:address location="http://localhost:55167/ASP/WebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceSoap12" binding="tns:WebServiceSoap12">
+      <soap12:address location="http://localhost:55167/ASP/WebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

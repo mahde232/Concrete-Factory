@@ -1,0 +1,89 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Mahde's WebMaster</title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">body{background: url(/MahdeMaster/images/Background-2.jpg) no-repeat center center fixed;
+                                -webkit-background-size: cover;
+                                -moz-background-size: cover;
+                                -o-background-size: cover;
+                                background-size: cover; 
+    }</style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+    
+    <table>
+    <tr><td><asp:Label BackColor="Red" ID="adminStateLabel" runat="server" Text="Admin State: " Visible="false" ></asp:Label></td></tr>
+    <tr><td>
+        <asp:Menu ID="MainMenu" runat="server" MaximumDynamicDisplayLevels="2"
+                DataSourceID="SiteMapDataSource" Font-Size="1.1em" ItemWrap="True" 
+                StaticEnableDefaultPopOutImage="False" 
+                BackColor="#F7F6F3" DynamicHorizontalOffset="2" Font-Names="Verdana" 
+                ForeColor="#00CCFF" StaticSubMenuIndent="10px"
+                Orientation="Horizontal" 
+                StaticItemFormatString=" {0} "  
+                StaticDisplayLevels="2">
+            </asp:Menu>
+    <asp:SiteMapDataSource ID="siteMapDataSource" runat="server" />
+    <asp:Button runat="server" ID="LoginButton" Text="Login" OnClick="LoginButton_Click" />
+    <asp:Button runat="server" ID="LogoutButton" Text="Logout" 
+            OnClientClick="if ( ! confirmation()) return false;"
+            OnClick="LogoutButton_Click" />
+
+    
+    </td></tr>
+    <tr><td>
+
+
+    </td></tr>
+    </table>
+
+
+     <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+     </asp:ContentPlaceHolder>
+     <asp:contentplaceholder id="ContentPlaceHolder2" runat="server">
+         <p>
+             &nbsp;</p>
+     </asp:contentplaceholder>
+
+
+
+    <p>
+    <table align="center" style="border-bottom">
+    <tr><td class="style1"> <asp:Label ID="Label1" runat="server"><font color="yellow" size="3.5">MahdeStudio Inc, All Rights Reserved ©, Coded by Mahde Halabi.</font></asp:Label> </td></tr>
+    </table>
+    </p>
+    
+    <script type="text/javascript" language=javascript>
+<!--
+        function confirmation() {
+            var answer = confirm("Are you sure you want to logout?")
+            if (answer == true) {
+                alert("You have successfully logged out!")
+                window.location = "/MahdeMaster/users/logout.aspx";
+            }
+        }
+//-->
+</script>
+
+    <script type="text/javascript" language=javascript>
+<!--
+        function RegisterWhileLoggedInError() {
+                alert("You have successfully logged out!")
+                window.location = "/MahdeMaster/users/RegisterPage.aspx";
+            }
+       // }
+//-->
+</script>
+
+
+    </div>
+    </form>
+</body>
+</html>
